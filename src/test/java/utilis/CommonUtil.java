@@ -150,7 +150,7 @@ public class CommonUtil {
 		driver.switchTo().defaultContent();
 	}
 
-	// ======================== WINDOW ========================//
+	// ======================== WINDOW =====================//
 
 	public void switchToNewWindow() {
 
