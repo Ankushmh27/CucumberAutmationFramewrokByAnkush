@@ -37,9 +37,10 @@ public class LoginPage {
 
 	public void entersUsenameAndPassword(String userName, String userPassword) {
 		util = new CommonUtil();
+        //Enter user name
 		util.waitForVisibility(username);
 		username.sendKeys(userName);
-
+		//Enter password
 		util.waitForVisibility(password);
 		password.sendKeys(userPassword);
 	}
