@@ -5,18 +5,22 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 
-		features = "./resources/features/login.feature",
+    features = "resources/features/login.feature",
 
-		glue = { "stepDefinitions", "hooks" },
+    glue = { "stepDefinitions", "hooks" },
 
-		plugin = {
+    plugin = {
+        "pretty",
+        "html:target/cucumber-report.html",
+        "json:target/json-report/cucumber.json",
+        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+    
+    },
 
-				"pretty",
-
-				"html:target/cucumber-report.html" }, monochrome = true
-
+    publish = true,
+    monochrome = true,
+    tags = "@Admin_Login_Positive"
 )
-
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 }

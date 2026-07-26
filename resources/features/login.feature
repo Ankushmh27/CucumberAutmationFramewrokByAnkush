@@ -1,5 +1,6 @@
 Feature: Login Functionality
 
+  @Admin_Login_Positive
   Scenario: Valid Login
 
     Given User launches the application
