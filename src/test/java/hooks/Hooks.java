@@ -12,7 +12,7 @@ public class Hooks {
 
 	@Before
 
-	public void setup() {
+	public void beforeScenario() {
 
 		BaseClass.initializeBrowser();
 
@@ -20,14 +20,18 @@ public class Hooks {
 
 	@After
 
-	public void tearDown(Scenario scenario) throws IOException {
+	public void afterScenario(Scenario scenario) throws IOException {
+		CommonUtil util = new CommonUtil();
+		if(scenario.isFailed()) {
+            scenario.attach(util.captureScreenshot(scenario.getName()+"_screenshots"), "png",scenario.getName());
+        }
 
-		if (scenario.isFailed()) {
-
-			CommonUtil util = new CommonUtil();
-
-			util.captureScreenshot(scenario.getName());
-		}
+//		if (scenario.isFailed()) {
+//
+//			
+//
+//			util.captureScreenshot(scenario.getName());
+//		}
 
 		BaseClass.quitBrowser();
 	}
