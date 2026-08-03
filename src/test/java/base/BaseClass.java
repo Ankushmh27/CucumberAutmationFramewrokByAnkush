@@ -25,7 +25,7 @@ public class BaseClass {
 	public static void quitBrowser() {
 		if (getDriver() != null) {
 			getDriver().quit();
-			driver.remove();
+//			driver.remove();
 		}
 	}
 

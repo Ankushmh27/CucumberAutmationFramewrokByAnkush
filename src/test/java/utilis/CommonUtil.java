@@ -33,16 +33,22 @@ public class CommonUtil {
 	}
 
 	public String captureScreenshot(String testName) throws IOException {
+//		testName = testName.replaceAll("[\\\\/:*?\"<>|]", "_");
+		testName = testName.replaceAll("[^a-zA-Z0-9-_ ]", "_").trim();
+		TakesScreenshot ts = (TakesScreenshot) BaseClass.getDriver();
 
-		TakesScreenshot ts = (TakesScreenshot) driver;
+	    File src = ts.getScreenshotAs(OutputType.FILE);
 
-		File src = ts.getScreenshotAs(OutputType.FILE);
+	    String path = System.getProperty("user.dir")
+	            + "/screenshots/"
+	            + testName + "_"
+	            + System.currentTimeMillis() + ".png";
 
-		String path = "screenshots/" + testName + ".png";
+	    File dest = new File(path);
+	    dest.getParentFile().mkdirs(); // Creates screenshots folder if it doesn't exist
+	    FileUtils.copyFile(src, dest);
 
-		FileUtils.copyFile(src, new File(path));
-
-		return path;
+	    return path;
 	}
 
 	// ======================== WAIT METHODS ========================//

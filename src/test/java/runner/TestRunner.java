@@ -19,7 +19,8 @@ import io.cucumber.testng.CucumberOptions;
 
     publish = true,
     monochrome = true,
-    tags = "@Admin_Login_Positive"
+//    tags = "@Admin_Login_Positive"
+    tags = "@testNG"
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
