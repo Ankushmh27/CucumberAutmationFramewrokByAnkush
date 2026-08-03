@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/4/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Jul 26 22:12:09 IST 2026</td>
+<td>Started on:</td><td>Thu Jul 30 01:25:14 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>28 seconds (28520 ms)</td>
+<tr><td>Total time:</td><td>101 seconds (101794 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,9 +76,94 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Valid Login", "Login Functionality"</td>
-<td></td>
-<td>9</td>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Login test data", "Login Functionality"</td>
+<td><div><pre>java.lang.AssertionError: LOGIN FAILED: Invalid credentials
+	at org.testng.Assert.fail(Assert.java:111)
+	at stepDefinitions.LoginSteps.user_should_see_dashboard(LoginSteps.java:65)
+	at ✽.User should see Dashboard &quot;Login Unsuccessful&quot;(file:///C:/Users/admin/eclipse-workspace/CucumberAutomationByAnkush/resources/features/login.feature:22)
+</pre></div><a href='#' onClick='toggleBox("stack-trace766599024", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace766599024'><pre>java.lang.AssertionError: LOGIN FAILED: Invalid credentials
+	at org.testng.Assert.fail(Assert.java:111)
+	at stepDefinitions.LoginSteps.user_should_see_dashboard(LoginSteps.java:65)
+	at ✽.User should see Dashboard &quot;Login Unsuccessful&quot;(file:///C:/Users/admin/eclipse-workspace/CucumberAutomationByAnkush/resources/features/login.feature:22)
+</pre></div></td>
+<td>28</td>
+<td>runner.TestRunner@394a2528</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Login test data", "Login Functionality"</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: JavaScript code failed
+from unknown command: &apos;Runtime.evaluate&apos; wasn&apos;t found
+  (Session info: chrome=150.0.7871.187)
+Build info: version: &apos;4.44.0&apos;, revision: &apos;da2039b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0e6e547a2e48c8f0082b20d6f14858a0, maximizeCurrentWindow {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.187, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: C:\Users\admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61562}, goog:processID: 1640, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61562/devtoo..., se:cdpVersion: 150.0.7871.187, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0e6e547a2e48c8f0082b20d6f14858a0
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:224)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:682)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:686)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:1187)
+	at base.BaseClass.initializeBrowser(BaseClass.java:19)
+	at hooks.Hooks.beforeScenario(Hooks.java:17)
+</pre></div><a href='#' onClick='toggleBox("stack-trace994267665", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace994267665'><pre>org.openqa.selenium.WebDriverException: unknown error: JavaScript code failed
+from unknown command: &apos;Runtime.evaluate&apos; wasn&apos;t found
+  (Session info: chrome=150.0.7871.187)
+Build info: version: &apos;4.44.0&apos;, revision: &apos;da2039b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0e6e547a2e48c8f0082b20d6f14858a0, maximizeCurrentWindow {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.187, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: C:\Users\admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61562}, goog:processID: 1640, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61562/devtoo..., se:cdpVersion: 150.0.7871.187, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0e6e547a2e48c8f0082b20d6f14858a0
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:224)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:682)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:686)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:1187)
+	at base.BaseClass.initializeBrowser(BaseClass.java:19)
+	at hooks.Hooks.beforeScenario(Hooks.java:17)
+</pre></div></td>
+<td>1</td>
+<td>runner.TestRunner@394a2528</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Login test data", "Login Functionality"</td>
+<td><div><pre>java.lang.AssertionError: LOGIN FAILED: Invalid credentials
+	at org.testng.Assert.fail(Assert.java:111)
+	at stepDefinitions.LoginSteps.user_should_see_dashboard(LoginSteps.java:65)
+	at ✽.User should see Dashboard &quot;Login Successful&quot;(file:///C:/Users/admin/eclipse-workspace/CucumberAutomationByAnkush/resources/features/login.feature:22)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1609565447", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1609565447'><pre>java.lang.AssertionError: LOGIN FAILED: Invalid credentials
+	at org.testng.Assert.fail(Assert.java:111)
+	at stepDefinitions.LoginSteps.user_should_see_dashboard(LoginSteps.java:65)
+	at ✽.User should see Dashboard &quot;Login Successful&quot;(file:///C:/Users/admin/eclipse-workspace/CucumberAutomationByAnkush/resources/features/login.feature:22)
+</pre></div></td>
+<td>31</td>
+<td>runner.TestRunner@394a2528</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: ": Valid Login", "Login Functionality"</td>
+<td><div><pre>java.lang.AssertionError: LOGIN FAILED: Invalid credentials
+	at org.testng.Assert.fail(Assert.java:111)
+	at stepDefinitions.LoginSteps.user_should_see_dashboard(LoginSteps.java:65)
+	at ✽.User should see Dashboard &quot;Login Successful&quot;(file:///C:/Users/admin/eclipse-workspace/CucumberAutomationByAnkush/resources/features/login.feature:10)
+</pre></div><a href='#' onClick='toggleBox("stack-trace918738473", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace918738473'><pre>java.lang.AssertionError: LOGIN FAILED: Invalid credentials
+	at org.testng.Assert.fail(Assert.java:111)
+	at stepDefinitions.LoginSteps.user_should_see_dashboard(LoginSteps.java:65)
+	at ✽.User should see Dashboard &quot;Login Successful&quot;(file:///C:/Users/admin/eclipse-workspace/CucumberAutomationByAnkush/resources/features/login.feature:10)
+</pre></div></td>
+<td>33</td>
 <td>runner.TestRunner@394a2528</td></tr>
 </table><p>
 </body>

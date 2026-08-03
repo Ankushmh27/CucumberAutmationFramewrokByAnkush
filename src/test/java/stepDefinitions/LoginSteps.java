@@ -20,31 +20,37 @@ public class LoginSteps extends BaseClass {
 		login = new LoginPage(getDriver());
 	}
 
-	@When("User enters username and password")
-	public void user_enters_username_and_password() {
-		login.entersUsenameAndPassword("Admin", "admin123");
+	@When("User enters username {string} and password {string}")
+	public void user_enters_username_and_password(String username, String password) {
+		
+		login.entersUsenameAndPassword(username, password);
 	}
 
 	@When("User clicks Login button")
 	public void user_clicks_login_button() {
-		login.clickOnLoginButton();
+		try {
+		    login.clickOnLoginButton();
+		} catch (Exception ex) {
+		    System.out.println("Exception occurred: " + ex.getMessage());
+		    ex.printStackTrace();
+		}
+//		login.clickOnLoginButton();
 	}
 
-	@Then("User should see Dashboard")
-	public void user_should_see_dashboard() {
+	@Then("User should see Dashboard {string}")
+	public void user_should_see_dashboard(String expectedMessage) {
 		util = new CommonUtil();
 		try {
 			WebElement dashboard = login.getDashboardTitle();
 			util.waitForVisibility(dashboard);
 
 			String actualTitle = getDriver().getTitle();
-			String expectedTitle = actualTitle;
+			String expectedTitle = "OrangeHRM";
 
-			System.out.println("LOGIN SUCCESS");
+			System.out.println("Login Successful : "+expectedMessage.equals("Login Successful"));
 			System.out.println("Page Title: " + actualTitle);
 
 			Assert.assertEquals(actualTitle, expectedTitle, "Page title mismatch");
-
 			return; // stop execution if login success
 
 		} catch (Exception e) {
@@ -55,12 +61,32 @@ public class LoginSteps extends BaseClass {
 		try {
 			WebElement error = login.getErrorMessage();
 			util.waitForVisibility(error);
-
+			String actualError = login.getErrorMessage().getText();
 			Assert.fail("LOGIN FAILED: " + error.getText());
-
+		    Assert.assertEquals(actualError, expectedMessage);
+		    
 		} catch (Exception e) {
-			System.out.println("Login Success");
+			System.out.println("Login Success" + expectedMessage);
 		}
-	}
+		
+		/*if(expectedMessage.equalsIgnoreCase("Login Successful")) {
 
+		    WebElement dashboard = login.getDashboardTitle();
+		    util.waitForVisibility(dashboard);
+
+		    Assert.assertTrue(dashboard.isDisplayed());
+		    Assert.assertEquals(getDriver().getTitle(), "OrangeHRM");
+
+		}
+		else {
+
+		    WebElement error = login.getErrorMessage();
+		    util.waitForVisibility(error);
+
+		    Assert.assertTrue(error.isDisplayed());
+		    Assert.assertEquals(error.getText(), expectedMessage);
+		}*/
+		
+	}
+		
 }

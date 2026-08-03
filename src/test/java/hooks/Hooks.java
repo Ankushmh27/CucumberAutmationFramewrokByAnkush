@@ -9,7 +9,7 @@ import io.cucumber.java.Scenario;
 import utilis.CommonUtil;
 
 public class Hooks {
-
+	CommonUtil util;
 	@Before
 
 	public void beforeScenario() {
@@ -21,17 +21,21 @@ public class Hooks {
 	@After
 
 	public void afterScenario(Scenario scenario) throws IOException {
-		CommonUtil util = new CommonUtil();
+		util= new CommonUtil();
 		if(scenario.isFailed()) {
             scenario.attach(util.captureScreenshot(scenario.getName()+"_screenshots"), "png",scenario.getName());
-        }
-
-//		if (scenario.isFailed()) {
+           
+		}
+//		
+//		 if (scenario.isFailed()) {
 //
-//			
+//		        String path = util.captureScreenshot(scenario.getName());
 //
-//			util.captureScreenshot(scenario.getName());
-//		}
+//		        scenario.attach(
+//		                java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(path)),
+//		                "image/png",
+//		                scenario.getName());
+//		    }
 
 		BaseClass.quitBrowser();
 	}

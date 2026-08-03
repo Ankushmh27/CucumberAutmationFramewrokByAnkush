@@ -40,7 +40,6 @@
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
 			<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
-			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
 		<!-- report name -->
@@ -50,7 +49,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Jul 26, 2026 09:41:53 pm</span>
+			<span class='label blue darken-3 suite-start-time'>Jul 30, 2026 01:03:02 am</span>
 			</a>
 		</ul>
 	</div>
@@ -65,7 +64,7 @@
 				<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-										<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -119,12 +118,12 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='$0%'>
-                    <span class='strong'>0</span> features passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='$100%'>
+                    <span class='strong'>1</span> features passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>
-                    1</span> features failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> features failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped
                 </div>
@@ -137,12 +136,12 @@
                     <canvas id='child-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='0%'>
-                    <span class='strong'>0</span> scenarios passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
+                    <span class='strong'>1</span> scenarios passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>
-                    1</span> scenarios failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> scenarios failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -157,12 +156,12 @@
                     <canvas id='grandchild-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='75%'>
-                    <span class='strong'>3</span> steps passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
+                    <span class='strong'>4</span> steps passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='25%'>
-                    1</span> steps failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> steps failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -185,11 +184,11 @@
 	<div class='subview-left left'>
 		<div class='view-summary'>
 			<ul id='test-collection' class='test-collection'>
-				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Login Functionality</span>
-						<span class='test-time'>Jul 26, 2026 09:41:54 pm</span>
-						<span class='test-status right fail'>Fail</span>
+						<span class='test-time'>Jul 30, 2026 01:03:03 am</span>
+						<span class='test-status right pass'>Pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class="sr-filters bdd-filters">
@@ -199,43 +198,42 @@
 	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
 </div>
 
-<div class='scenario node' test-id='2' status='fail'>
+<div class='scenario outline node' test-id='2' status='pass'>
 
-	<span class='duration right label'>00 00 26.209</span>
+	<span class='duration right label'>00 00 09.294</span>
 	<div class="bdd-test">
-		<div class="scenario-name"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span> Scenario: Valid Login</div>
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: : Valid Login</div>
 	</div>
 	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>username</td><td>password</td><td>message</td></tr><tr><td>admin</td><td>admin123</td><td>Login Successful</td></tr></table></div>
 	
-		<div class='category-list'>
-				<span class='category label'>@Admin_Login_Positive</span>
-		</div>
 	
 	<ul class='steps'>
-		<li test-id='4' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.LoginSteps.user_launches_the_application())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launches the application</div>
+		<li test-id='3' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>: Valid Login</div>
 
+				<div class='category-list'>
+						<span class='category label'>@Admin_Login_Positive</span>
+				</div>
 
-		</li>
-		<li test-id='5' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.LoginSteps.user_enters_username_and_password())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User enters username and password</div>
+			<ul class='gc steps'>
+				<li test-id='5' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="stepDefinitions.LoginSteps.user_launches_the_application()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given User launches the application</h6>
 
+				</li>
+				<li test-id='6' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="stepDefinitions.LoginSteps.user_enters_username_and_password(java.lang.String,java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When User enters username "admin" and password "admin123"</h6>
 
-		</li>
-		<li test-id='6' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.LoginSteps.user_clicks_login_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User clicks Login button</div>
+				</li>
+				<li test-id='7' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="stepDefinitions.LoginSteps.user_clicks_login_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And User clicks Login button</h6>
 
+				</li>
+				<li test-id='8' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="stepDefinitions.LoginSteps.user_should_see_dashboard(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then User should see Dashboard "Login Successful"</h6>
 
-		</li>
-		<li test-id='7' class='node then Fail' status='Fail'>
-			<div class="step-name" title="(stepDefinitions.LoginSteps.user_should_see_dashboard())"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Then User should see Dashboard</div>
-
-
-					<textarea disabled class="code-block">java.lang.AssertionError: LOGIN FAILED: Invalid credentials
-	at org.testng.Assert.fail(Assert.java:111)
-	at stepDefinitions.LoginSteps.user_should_see_dashboard(LoginSteps.java:59)
-	at ✽.User should see Dashboard(file:///C:/Users/admin/eclipse-workspace/CucumberAutomationByAnkush/resources/features/login.feature:12)
-</textarea>
+				</li>
+			</ul>
 		</li>
 	</ul>
 </div>
@@ -285,13 +283,13 @@
 					<div class='category-heading'>
 						<span class='category-name'>@Admin_Login_Positive</span>
 						<span class='category-status right'>
-						<span class='label fail'>1</span>
+						<span class='label pass'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
 							
-							<span status="fail" class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 						<div class='category-tests'>
@@ -305,9 +303,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jul 26, 2026 09:41:54 pm</td>
-										<td class='linked' test-id='2'>Valid Login</td>
-										<td><span class='test-status Fail'>Fail</span></td>
+										<td>Jul 30, 2026 01:03:03 am</td>
+										<td class='linked' test-id='3'>: Valid Login</td>
+										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -323,66 +321,7 @@
 		</div>
 	</div>
 </div>
-<!-- category view --><div id='exception-view' class='view hide'>
-	<section id='controls'>
-		<div class='controls grey lighten-4'>
-			<!-- search -->
-			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
-				<a href="#" class='search-div'>
-				<i class='material-icons'>search</i> Search
-				</a>
-				<div class='input-field left hide'>
-					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
-				</div>
-			</div>
-			<!-- search -->
-		</div>
-	</section>
-	<div class='subview-left left'>
-		<div class='view-summary'>
-			<ul id='exception-collection' class='exception-collection'>
-				<li class='exception displayed active'>
-					<div class='exception-heading'>
-						<span class='exception-name'>java.lang.AssertionError</span>
-						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
-					</div>
-					<div class='exception-content hide'>
-						<div class='exception-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>StackTrace</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Jul 26, 2026 09:41:59 pm</td>
-										<td class='linked' test-id='7'>Then User should see Dashboard</td>
-										<td>
-											<textarea disabled class="code-block">java.lang.AssertionError: LOGIN FAILED: Invalid credentials
-	at org.testng.Assert.fail(Assert.java:111)
-	at stepDefinitions.LoginSteps.user_should_see_dashboard(LoginSteps.java:59)
-	at ✽.User should see Dashboard(file:///C:/Users/admin/eclipse-workspace/CucumberAutomationByAnkush/resources/features/login.feature:12)
-</textarea>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class='subview-right left'>
-		<div class='view-summary'>
-			<h5 class='exception-name'></h5>
-		</div>
-	</div>
-</div>
-<!-- exception view --><div id='dashboard-view' class='view hide'>
+<!-- category view --><div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
 		<h5>Dashboard</h5>
 
@@ -408,19 +347,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jul 26, 2026 09:41:53 pm</div>
+					<div class='panel-lead'>Jul 30, 2026 01:03:02 am</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jul 26, 2026 09:42:20 pm</div>
+			 		<div class='panel-lead'>Jul 30, 2026 01:03:12 am</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>00 00 27.158</div>
+					<div class='panel-lead'>00 00 10.061</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -465,11 +404,11 @@
 						</tr>
 						<tr>
 							<td>@Admin_Login_Positive</td>
-							<td>0</td>
 							<td>1</td>
 							<td>0</td>
+							<td>0</td>
 							<td>
-									0%
+									100%
 							</td>
 						</tr>
 					</table>
@@ -484,23 +423,23 @@
 		<script>
 			var statusGroup = {
                 parentCount: 1,
-				passParent: 0,
-				failParent: 1,
+				passParent: 1,
+				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
 				childCount: 1,
-				passChild: 0,
-				failChild: 1,
+				passChild: 1,
+				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
 				grandChildCount: 4,
-				passGrandChild: 3,
-				failGrandChild: 1,
+				passGrandChild: 4,
+				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
@@ -511,7 +450,7 @@
 		
 		<script>
 			var timeline = {
-			        "Login Functionality":26.212
+			        "Login Functionality":9.296
 			};
 		</script>
 		

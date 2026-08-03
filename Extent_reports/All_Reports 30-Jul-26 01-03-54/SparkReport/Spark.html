@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Orange HRM Automation Test Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jul 26, 2026 10:12:10 pm</span></a>
+<a href="#"><span class="badge badge-primary">Jul 30, 2026 01:03:54 am</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('category-view')">
@@ -71,7 +76,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -85,25 +90,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Login Functionality</p>
             <p class="text-sm">
-              <span>10:12:10 pm</span> / <span>00:00:08:841</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>1:03:55 am</span> / <span>00:00:27:119</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Login Functionality</h5>
-<span class='badge badge-success'>07.26.2026 10:12:10 pm</span>
-<span class='badge badge-danger'>07.26.2026 10:12:19 pm</span>
-<span class='badge badge-default'>00:00:08:841</span>
+<h5 class="test-status text-fail">Login Functionality</h5>
+<span class='badge badge-success'>07.30.2026 1:03:55 am</span>
+<span class='badge badge-danger'>07.30.2026 1:04:22 am</span>
+<span class='badge badge-default'>00:00:27:119</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -115,32 +120,62 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Valid Login</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>: Valid Login</div>
       </div>
     </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="stepDefinitions.LoginSteps.user_launches_the_application()">
-                <span>Given User launches the application</span>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>: Valid Login</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given User launches the application</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LoginSteps.user_enters_username_and_password()">
-                <span>When User enters username and password</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When User enters username "admin" and password "admin1234"</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LoginSteps.user_clicks_login_button()">
-                <span>And User clicks Login button</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User clicks Login button</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="stepDefinitions.LoginSteps.user_should_see_dashboard()">
-                <span>Then User should see Dashboard</span>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then User should see Dashboard "Login Successful"</span>
       <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: LOGIN FAILED: Invalid credentials
+	at org.testng.Assert.fail(Assert.java:111)
+	at stepDefinitions.LoginSteps.user_should_see_dashboard(LoginSteps.java:65)
+	at ✽.User should see Dashboard "Login Successful"(file:///C:/Users/admin/eclipse-workspace/CucumberAutomationByAnkush/resources/features/login.feature:8)
+</textarea>
+      
       </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>hooks.Hooks.afterScenario(io.cucumber.java.Scenario)</span>
+      <div>
+        <textarea disabled class="code-block">java.io.IOException: The filename, directory name, or volume label syntax is incorrect
+	at java.base/java.io.WinNTFileSystem.canonicalize0(Native Method)
+	at java.base/java.io.WinNTFileSystem.canonicalize(WinNTFileSystem.java:463)
+	at java.base/java.io.File.getCanonicalPath(File.java:626)
+	at org.apache.commons.io.FileUtils.requireCanonicalPathsNotEquals(FileUtils.java:2852)
+	at org.apache.commons.io.FileUtils.copyFile(FileUtils.java:856)
+	at org.apache.commons.io.FileUtils.copyFile(FileUtils.java:888)
+	at org.apache.commons.io.FileUtils.copyFile(FileUtils.java:790)
+	at utilis.CommonUtil.captureScreenshot(CommonUtil.java:48)
+	at hooks.Hooks.afterScenario(Hooks.java:26)
+</textarea>
+      
+      </div>
+                  </div>
               </div>
-          </div>
+            </div>
         </div>
   </div>
 </div>
@@ -155,26 +190,26 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view category-view attributes-view">
+<div class="test-wrapper row view exception-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>1</span>
+<span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@Admin_Login_Positive</p>
+<p class="name">java.io.IOException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@Admin_Login_Positive</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
+<h4>java.io.IOException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -185,13 +220,101 @@
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>22:12:10 pm</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>01:04:22 am</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>Valid Login</a>
+<a href="#" class="linked" test-id='1' id='9'>hooks.Hooks.afterScenario(io.cucumber.java.Scenario)</a>
 <div class="">
-<span class="badge badge-default">Login Functionality.Valid Login</span>
+<span class="badge badge-default">Login Functionality.: Valid Login.hooks.Hooks.afterScenario(io.cucumber.java.Scenario)</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>01:04:01 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='8'>Then User should see Dashboard "Login Successful"</a>
+<div class="">
+<span class="badge badge-default">Login Functionality.: Valid Login.Then User should see Dashboard "Login Successful"</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@Admin_Login_Positive</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Admin_Login_Positive</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>01:03:55 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>: Valid Login</a>
+<div class="">
+<span class="badge badge-default">Login Functionality.: Valid Login</span>
 </div>
 </td>
 </tr>
@@ -212,25 +335,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jul 26, 2026 10:12:10 pm</h3>
+<h3>Jul 30, 2026 01:03:54 am</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jul 26, 2026 10:12:19 pm</h3>
+<h3>Jul 30, 2026 01:04:22 am</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -246,12 +369,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> features passed
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> features failed,
+<small data-tooltip='100%'><b>1</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -269,9 +392,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> scenarios failed,
+<small data-tooltip='100%'><b>1</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -289,9 +412,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>4</b> steps passed</small></div>
+<div><small data-tooltip='60%'><b>3</b> steps passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> steps failed,
+<small data-tooltip='40%'><b>2</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -308,7 +431,7 @@
 </div></div>
 <script>
 var timeline = {
-"Login Functionality":8.841
+"Login Functionality":27.119
 };
 </script>
 <div class="row">
@@ -319,11 +442,11 @@ var timeline = {
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
 <td>@Admin_Login_Positive</td>
+<td>0</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>0%</td>
 </tr>
 </tbody>
 </table></div>
@@ -360,19 +483,19 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 1,
-failChild: 0,
+passChild: 0,
+failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 4,
-failGrandChild: 0,
+passGrandChild: 3,
+failGrandChild: 2,
 warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
